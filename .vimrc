@@ -10,23 +10,9 @@
 "   80 Columns: http://stackoverflow.com/a/1117367/84513
 "   pathogen etc: http://mirnazim.org/writings/vim-plugins-i-use/
 "
-" INSTALL
-"   cd
-"   mkdir ~/.vim
-"   git clone git://github.com/tpope/vim-pathogen.git pathogen
-"   mv pathogen/autoload ~/.vim/
-"
-"   cd ~/.vim
-"   git clone git://github.com/ervandew/supertab.git bundle/supertab
-"   git clone git://github.com/vim-scripts/peaksea.git bundle/peaksea
-"
-"   # Tagbar
-"   sudo apt-get install exuberant-ctags
-"   cd ~/.vim
-"   git clone git://github.com/majutsushi/tagbar.git bundle/tagbar
-"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+set number
 " File type detection
 filetype on
 
@@ -60,6 +46,7 @@ set background=dark
 " Tagbar
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>
+autocmd VimEnter * nested :TagbarOpen "https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt
 
 " Shortcuts
 set pastetoggle=<F3> "turn off auto-indent when pasting text
