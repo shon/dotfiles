@@ -23,6 +23,7 @@ match ErrorMsg /\%>80v.\+/
 
 " Use spaces instead of tabs
 set expandtab
+autocmd FileType make set noexpandtab " not for make files
 
 " Be smart when using tabs ;)
 set smarttab
@@ -46,7 +47,7 @@ set background=dark
 " Tagbar
 let g:tagbar_usearrows = 1
 nmap <F8> :TagbarToggle<CR>
-autocmd VimEnter * nested :TagbarOpen "https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt
+autocmd VimEnter *.py nested :TagbarOpen "https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt
 
 " Shortcuts
 set pastetoggle=<F3> "turn off auto-indent when pasting text
