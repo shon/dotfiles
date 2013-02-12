@@ -19,7 +19,12 @@ filetype on
 " 80 columns
 " Works only on vim > 7.3
 "set colorcolumn=80 
-match ErrorMsg /\%>80v.\+/
+"match ErrorMsg /\%>80v.\+/
+
+" Search
+set hlsearch " highlight the search
+set ignorecase
+set incsearch " incremental (search as you type)
 
 " Use spaces instead of tabs
 set expandtab
@@ -51,3 +56,25 @@ autocmd VimEnter *.py nested :TagbarOpen "https://github.com/majutsushi/tagbar/b
 
 " Shortcuts
 set pastetoggle=<F3> "turn off auto-indent when pasting text
+
+" Remember and restore
+" http://vim.wikia.com/wiki/Restore_cursor_to_file_position_in_previous_editing_session
+"
+"  '10  :  marks will be remembered for up to 10 previously edited files
+"  "100 :  will save up to 100 lines for each register
+"  :20  :  up to 20 lines of command-line history will be remembered
+"  %    :  saves and restores the buffer list
+"  n... :  where to save the viminfo files
+set viminfo='10,\"100,:20,%,n~/.viminfo
+
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
