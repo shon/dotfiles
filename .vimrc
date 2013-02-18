@@ -78,3 +78,6 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+" Remove all trailing spaces
+autocmd BufWritePre * :%s/\s\+$//e
