@@ -34,8 +34,8 @@ autocmd FileType make set noexpandtab " not for make files
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=2
-set tabstop=2
+set shiftwidth=4
+set tabstop=4
 
 set ai "Auto indent
 set si "Smart indent
