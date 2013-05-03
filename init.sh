@@ -1,6 +1,6 @@
-sudo apt-get install exuberant-ctags git
+(which git && which ctags) || sudo apt-get install exuberant-ctags git
 
 grep 'bash_aliases' ~/.bashrc || echo "source ~/.bash_aliases" >> ~/.bashrc
 ln -sf `pwd`/.bash_aliases ~/.bash_aliases
 ln -sf `pwd`/.vimrc ~/.vimrc
-ln -sf `pwd`/.vim ~/.vim
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle

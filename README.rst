@@ -5,3 +5,6 @@ Setup::
   git clone git@github.com:shon/dotfiles.git
   cd dotfiles
   sh -x init.sh
+  open vim
+  # within vim
+  :BundleInstall
