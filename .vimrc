@@ -24,12 +24,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " The bundles you install will be listed here
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ervandew/supertab'
 Bundle 'klen/python-mode'
 Bundle 'ervandew/taglisttoo'
+Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
@@ -149,12 +149,32 @@ augroup resCur
   autocmd BufWinEnter * call ResCur()
 augroup END
 
-" Powerline
+" Powerline/airline
 set laststatus=2
+set t_Co=256 " from airline wiki
+" Airline " :help airline
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline_paste_symbol = 'Þ'
+let g:airline_paste_symbol = '∥'
+let g:airline_left_sep = ''
+
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_fugitive_prefix = ' '
+let g:airline_readonly_symbol = ''
+
+
 
 " gvim preferences
 if has ('gui_running')
-    set guifont=Droid\ Sans\ Mono\ 11
+    " set guifont=Droid\ Sans\ Mono\ 11
+    set guifont=DejaVu\ Sans\ Mono\ 11
     colorscheme murphy
     " highlight Pmenu guibg=#cccccc gui=bold
 endif
