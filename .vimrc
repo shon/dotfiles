@@ -16,6 +16,7 @@
 set nocompatible
 filetype off " why?
 
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -30,6 +31,10 @@ Bundle 'ervandew/supertab'
 Bundle 'klen/python-mode'
 Bundle 'ervandew/taglisttoo'
 Bundle 'bling/vim-airline'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'junegunn/goyo.vim'
+" Bundle 'Valloric/YouCompleteMe'
+Bundle 'Yggdroot/indentLine'
 
 filetype plugin indent on
 
@@ -169,8 +174,6 @@ let g:airline_right_alt_sep = ''
 let g:airline_fugitive_prefix = ' '
 let g:airline_readonly_symbol = ''
 
-
-
 " gvim preferences
 if has ('gui_running')
     " set guifont=Droid\ Sans\ Mono\ 11
@@ -184,3 +187,5 @@ endif
 let g:Tlist_Auto_Open=1
 map <F8> :TlistToo<CR>
 " let g:TaglistTooPosition='right'
+
+let g:indentLine_char = '|'
