@@ -57,6 +57,11 @@ set hlsearch " highlight the search
 set ignorecase
 set incsearch " incremental (search as you type)
 
+" re-use the same window and switch from an unsaved buffer without saving it first
+set hidden
+" command line completion
+set wildmenu
+
 " Use spaces instead of tabs
 set expandtab
 autocmd FileType make set noexpandtab " not for make files
