@@ -67,6 +67,8 @@ set smarttab
 " 1 tab == 4 spaces
 set shiftwidth=4
 set tabstop=4
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype jade setlocal ts=2 sts=2 sw=2
 
 set ai "Auto indent
 set si "Smart indent
@@ -97,7 +99,7 @@ set background=dark
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 
 " Documentation
 let g:pymode_doc = 1
@@ -184,7 +186,7 @@ endif
 
 " TaglistToo
 " https://github.com/ervandew/taglisttoo/blob/master/doc/taglisttoo.txt
-let g:Tlist_Auto_Open=1
+let g:Tlist_Auto_Open=0
 map <F8> :TlistToo<CR>
 " let g:TaglistTooPosition='right'
 
