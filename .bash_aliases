@@ -3,8 +3,9 @@ export EDITOR=vim
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias p='ping google.com'
-alias pull='git pull origin master'
-alias push='git push origin master'
+alias gitcbranch='git rev-parse --abbrev-ref HEAD'
+pull () { git pull origin `gitcbranch`; }
+push () { git push origin `gitcbranch`; }
 alias wget='wget -c'
 alias wgets='wget -c --no-check-certificate'
 alias bc='python'
