@@ -4,11 +4,23 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias p='ping google.com'
 alias gitcbranch='git rev-parse --abbrev-ref HEAD'
-pull () { git pull origin `gitcbranch`; }
-push () { git push origin `gitcbranch`; }
+pull () {
+    branch="`gitcbranch`"
+    cmd="git pull origin $branch"
+    echo "Executing: $cmd"
+    $cmd
+}
+push () {
+    branch="`gitcbranch`"
+    cmd="git push origin $branch"
+    echo "Executing: $cmd"
+    $cmd
+}
 alias wget='wget -c'
 alias wgets='wget -c --no-check-certificate'
 alias bc='python'
 alias rm='rm -i'
 alias netstat='sudo netstat -lptu'
 alias pss='pss -i'
+alias wh='/usr/bin/google-chrome --app=http://web.whatsapp.com'
+alias castnow='~/node_modules/.bin/castnow'

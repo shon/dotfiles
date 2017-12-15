@@ -33,8 +33,11 @@ Bundle 'ervandew/taglisttoo'
 Bundle 'bling/vim-airline'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'junegunn/goyo.vim'
+Bundle 'majutsushi/tagbar'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'Yggdroot/indentLine'
+Bundle 'mrtazz/simplenote.vim'
+source ~/.simplenoterc
 
 filetype plugin indent on
 
@@ -86,10 +89,10 @@ set background=dark
 "colors peaksea
 
 " Tagbar
-"let g:tagbar_usearrows = 1
-"let g:tagbar_left = 1
-"nmap <F8> :TagbarToggle<CR>
-"autocmd VimEnter *.py nested :TagbarOpen "https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt
+let g:tagbar_usearrows = 1
+let g:tagbar_left = 1
+nmap <F8> :TagbarToggle<CR>
+autocmd VimEnter *.py nested :TagbarOpen "https://github.com/majutsushi/tagbar/blob/master/doc/tagbar.txt
 
 " python-mode
 " Activate rope
@@ -191,8 +194,8 @@ endif
 
 " TaglistToo
 " https://github.com/ervandew/taglisttoo/blob/master/doc/taglisttoo.txt
-let g:Tlist_Auto_Open=0
-map <F8> :TlistToo<CR>
+" let g:Tlist_Auto_Open=0
+" map <F8> :TlistToo<CR>
 " let g:TaglistTooPosition='right'
 
 let g:indentLine_char = '|'
