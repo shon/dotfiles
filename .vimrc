@@ -37,6 +37,7 @@ Bundle 'majutsushi/tagbar'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'Yggdroot/indentLine'
 Bundle 'mrtazz/simplenote.vim'
+Bundle 'posva/vim-vue'
 source ~/.simplenoterc
 
 filetype plugin indent on
