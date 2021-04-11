@@ -36,19 +36,13 @@ Bundle 'junegunn/goyo.vim'
 Bundle 'majutsushi/tagbar'
 " Bundle 'Valloric/YouCompleteMe'
 Bundle 'Yggdroot/indentLine'
-Bundle 'mrtazz/simplenote.vim'
 Bundle 'posva/vim-vue'
-source ~/.simplenoterc
+" Bundle 'mrtazz/simplenote.vim'
+" source ~/.simplenoterc
 
 filetype plugin indent on
 
 " The rest of your config follows here
-augroup vimrc_autocmds
-    autocmd!
-    " highlight characters past column 120
-    autocmd FileType python highlight Excess ctermbg=DarkGrey guibg=Black
-    autocmd FileType python match Excess /\%120v.*/
-augroup END
 
 " NerdTree
 map <F2> :NERDTreeToggle<CR>
@@ -132,6 +126,7 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
+" let g:pymode_options_max_line_length = 88
 
 " Don't autofold code
 let g:pymode_folding = 0
