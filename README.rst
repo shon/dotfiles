@@ -2,7 +2,7 @@ Vim and bash configuration to setup my dev env
 
 Setup::
   
-  git clone git@github.com:shon/dotfiles.git
+  git clone https://github.com/shon/dotfiles.git
   cd dotfiles
   sh -x init.sh
   open vim
