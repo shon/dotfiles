@@ -16,6 +16,12 @@ push () {
     echo "Executing: $cmd"
     $cmd
 }
+fetch () {
+    cmd="git fetch origin $1"
+    echo "Executing: $cmd"
+    $cmd && git checkout $1
+    echo "Switched branch to $1"
+}
 alias wget='wget -c'
 alias wgets='wget -c --no-check-certificate'
 alias bc='python'
@@ -24,3 +30,4 @@ alias netstat='sudo netstat -lptu'
 alias pss='pss -i'
 alias wh='/usr/bin/google-chrome --app=http://web.whatsapp.com'
 alias castnow='~/node_modules/.bin/castnow'
+alias cat='/usr/bin/bat'
