@@ -1,4 +1,6 @@
-(which git && which ctags) || sudo apt-get install vim git
+which git || sudo apt-get install git
+which vim || sudo apt-get install vim
+which ctags || sudo apt-get install exuberant-ctags
 
 grep 'bash_aliases' ~/.bashrc || echo "source ~/.bash_aliases" >> ~/.bashrc
 ln -sf `pwd`/.bash_aliases ~/.bash_aliases
