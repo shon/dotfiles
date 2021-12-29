@@ -1,0 +1,13 @@
+[user]
+	email = pythonic@gmail.com
+	name = Shekhar
+[alias]
+	branches = !legit branches
+	publish = !legit publish
+	unpublish = !legit unpublish
+	sync = !legit sync
+	switch = !legit switch
+	resync = !legit resync
+	undo = !legit undo
+[diff]
+	noprefix = true
