@@ -36,7 +36,6 @@ This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon 
     ```bash
     sh ./init.sh
     ```
-    The script will pause and ask you to manually install a [Nerd Font](https://www.nerdfonts.com/font-downloads), which is required for UI icons to render correctly. Follow the instructions in the terminal.
 
 3.  **Launch Neovim:**
     The first time you start Neovim, `lazy.nvim` will automatically install all the plugins.

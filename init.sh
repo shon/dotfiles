@@ -15,7 +15,7 @@ echo "--> Detecting package manager and installing essential packages..."
 # Function to install packages on Fedora-based systems
 install_fedora() {
     echo "    - Fedora/RHEL-based system detected. Using dnf."
-    sudo dnf install -y neovim git ripgrep bat wget unzip fontconfig
+    sudo dnf install -y neovim git ripgrep bat
     sudo dnf groupinstall -y '@development-tools'
 }
 
@@ -24,7 +24,7 @@ install_ubuntu() {
     echo "    - Debian/Ubuntu-based system detected. Using apt-get."
     sudo apt-get update
     # The 'bat' package on Ubuntu provides the 'batcat' executable needed for the alias.
-    sudo apt-get install -y neovim git ripgrep bat wget unzip build-essential fontconfig
+    sudo apt-get install -y neovim git ripgrep bat build-essential
 }
 
 if command -v dnf &> /dev/null; then
@@ -42,43 +42,7 @@ echo ""
 
 
 # ---
-# Step 2: Download and Install Nerd Font (FiraCode)
-# ---
-FONT_FILE="$HOME/.local/share/fonts/FiraCodeNerdFont-Regular.ttf"
-
-if [ ! -f "$FONT_FILE" ]; then
-    echo "--> Installing FiraCode Nerd Font..."
-    FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip"
-    FONT_DIR="$HOME/.local/share/fonts"
-    TEMP_DIR="/tmp/firacode-nerdfont"
-
-    # Create directories
-    mkdir -p "$FONT_DIR"
-    mkdir -p "$TEMP_DIR"
-
-    # Download and unzip the font
-    echo "    - Downloading FiraCode Nerd Font..."
-    wget -q --show-progress -O "$TEMP_DIR/FiraCode.zip" "$FONT_URL"
-    echo "    - Unzipping font..."
-    unzip -o "$TEMP_DIR/FiraCode.zip" -d "$TEMP_DIR/unzipped" > /dev/null
-    echo "    - Installing fonts..."
-    cp "$TEMP_DIR/unzipped"/*.ttf "$FONT_DIR/"
-
-    # Clean up temporary files
-    rm -rf "$TEMP_DIR"
-
-    # Update font cache
-    echo "    - Updating font cache..."
-    fc-cache -fv > /dev/null
-
-    echo "--> FiraCode Nerd Font installed successfully."
-else
-    echo "--> FiraCode Nerd Font already installed. Skipping."
-fi
-echo ""
-
-# ---
-# Step 3: Create symlinks for configuration files
+# Step 2: Create symlinks for configuration files
 # ---
 echo "--> Creating symlinks for configuration files..."
 
@@ -104,9 +68,8 @@ echo "--> Symlinks created."
 echo ""
 
 # ---
-# Step 4: Final instructions
+# Step 3: Final instructions
 # ---
 echo "--> Setup complete!"
-echo "    IMPORTANT: For icons to display correctly, please set your terminal's font to 'FiraCode Nerd Font'."
 echo "    - Please restart your shell or run 'source ~/.bashrc' for changes to take effect."
 echo "    - The first time you open nvim, plugins will be installed automatically."
