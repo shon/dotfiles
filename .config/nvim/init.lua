@@ -30,14 +30,6 @@ require("lazy").setup({
   'hrsh7th/cmp-path',
 
   -- UI and Aesthetics
-  {
-    'rashanar/lunaperche.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd('colorscheme lunaperche')
-    end,
-  },
   { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -122,7 +114,7 @@ vim.opt.laststatus = 2
 -- Configure lualine
 require('lualine').setup {
   options = {
-    theme = 'lunaperche',
+    colorscheme = 'lunaperche',
     section_separators = { left = '|', right = '|' },
     component_separators = { left = ':', right = ':' }
   }
