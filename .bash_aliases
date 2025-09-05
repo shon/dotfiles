@@ -1,5 +1,6 @@
 export EDITOR=nvim
 alias vim='nvim'
+alias v='nvim'
 alias gitcbranch='git rev-parse --abbrev-ref HEAD'
 pull () {
     branch="`gitcbranch`"

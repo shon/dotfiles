@@ -30,7 +30,7 @@ require("lazy").setup({
   'hrsh7th/cmp-path',
 
   -- UI and Aesthetics
-  { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {} },
+  { 'rashanar/lunaperche.nvim', lazy = false, priority = 1000 },
   { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -113,12 +113,12 @@ vim.opt.termguicolors = true
 vim.opt.laststatus = 2
 
 -- Set colorscheme
-vim.cmd('colorscheme tokyonight')
+vim.cmd('colorscheme lunaperche')
 
 -- Configure lualine
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
+    theme = 'lunaperche',
     section_separators = '',
     component_separators = ''
   }
