@@ -157,9 +157,6 @@ end
 -- [[ ---------------- LSP Configuration ---------------- ]]
 -- Configure Mason
 require('mason').setup()
-require('mason-lspconfig').setup({
-  ensure_installed = { "pyright" }
-})
 
 -- Configure nvim-cmp
 local cmp = require'cmp'
@@ -173,14 +170,17 @@ cmp.setup({
 
 -- Configure LSP servers
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('mason-lspconfig').setup_handlers {
-  function (server_name)
-    require('lspconfig')[server_name].setup {
-      on_attach = on_attach,
-      capabilities = capabilities
-    }
-  end,
-}
+require('mason-lspconfig').setup({
+  ensure_installed = { "pyright" },
+  handlers = {
+    function (server_name)
+      require('lspconfig')[server_name].setup {
+        on_attach = on_attach,
+        capabilities = capabilities
+      }
+    end,
+  }
+})
 
 -- Autoformat on save
 vim.api.nvim_create_autocmd("BufWritePre", {
