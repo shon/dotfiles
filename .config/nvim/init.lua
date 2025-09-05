@@ -26,6 +26,8 @@ require("lazy").setup({
   -- Autocompletion (a basic setup)
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/nvim-cmp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
 
   -- UI and Aesthetics
   { 'folke/tokyonight.nvim', lazy = false, priority = 1000, opts = {} },
@@ -161,11 +163,11 @@ require('mason').setup()
 -- Configure nvim-cmp
 local cmp = require'cmp'
 cmp.setup({
-  sources = cmp.config.sources({
+  sources = {
     { name = 'nvim_lsp' },
-  }, {
     { name = 'buffer' },
-  })
+    { name = 'path' },
+  },
 })
 
 -- Configure LSP servers

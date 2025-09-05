@@ -1,8 +1,10 @@
-# Modern Neovim Dotfiles
+# Dotfiles
 
-This repository contains a modernized set of dotfiles to create a powerful Neovim-based development environment. The configuration is written in Lua and managed by the `lazy.nvim` plugin manager.
+Configuration to setup my dev env
 
-This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon hardware, but can be adapted for other Linux distributions.
+Mostly Neovim and bash
+
+This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon hardware and Ubuntu, but can be adapted for other Linux distributions.
 
 ## Features
 
