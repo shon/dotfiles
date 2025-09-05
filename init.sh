@@ -44,31 +44,37 @@ echo ""
 # ---
 # Step 2: Download and Install Nerd Font (FiraCode)
 # ---
-echo "--> Installing FiraCode Nerd Font..."
-FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip"
-FONT_DIR="$HOME/.local/share/fonts"
-TEMP_DIR="/tmp/firacode-nerdfont"
+FONT_FILE="$HOME/.local/share/fonts/FiraCodeNerdFont-Regular.ttf"
 
-# Create directories
-mkdir -p "$FONT_DIR"
-mkdir -p "$TEMP_DIR"
+if [ ! -f "$FONT_FILE" ]; then
+    echo "--> Installing FiraCode Nerd Font..."
+    FONT_URL="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCode.zip"
+    FONT_DIR="$HOME/.local/share/fonts"
+    TEMP_DIR="/tmp/firacode-nerdfont"
 
-# Download and unzip the font
-echo "    - Downloading FiraCode Nerd Font..."
-wget -q --show-progress -O "$TEMP_DIR/FiraCode.zip" "$FONT_URL"
-echo "    - Unzipping font..."
-unzip -o "$TEMP_DIR/FiraCode.zip" -d "$TEMP_DIR/unzipped" > /dev/null
-echo "    - Installing fonts..."
-cp "$TEMP_DIR/unzipped"/*.ttf "$FONT_DIR/"
+    # Create directories
+    mkdir -p "$FONT_DIR"
+    mkdir -p "$TEMP_DIR"
 
-# Clean up temporary files
-rm -rf "$TEMP_DIR"
+    # Download and unzip the font
+    echo "    - Downloading FiraCode Nerd Font..."
+    wget -q --show-progress -O "$TEMP_DIR/FiraCode.zip" "$FONT_URL"
+    echo "    - Unzipping font..."
+    unzip -o "$TEMP_DIR/FiraCode.zip" -d "$TEMP_DIR/unzipped" > /dev/null
+    echo "    - Installing fonts..."
+    cp "$TEMP_DIR/unzipped"/*.ttf "$FONT_DIR/"
 
-# Update font cache
-echo "    - Updating font cache..."
-fc-cache -fv > /dev/null
+    # Clean up temporary files
+    rm -rf "$TEMP_DIR"
 
-echo "--> FiraCode Nerd Font installed successfully."
+    # Update font cache
+    echo "    - Updating font cache..."
+    fc-cache -fv > /dev/null
+
+    echo "--> FiraCode Nerd Font installed successfully."
+else
+    echo "--> FiraCode Nerd Font already installed. Skipping."
+fi
 echo ""
 
 # ---
