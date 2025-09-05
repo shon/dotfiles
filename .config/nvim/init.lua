@@ -30,7 +30,14 @@ require("lazy").setup({
   'hrsh7th/cmp-path',
 
   -- UI and Aesthetics
-  { 'rashanar/lunaperche.nvim', lazy = false, priority = 1000 },
+  {
+    'rashanar/lunaperche.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd('colorscheme lunaperche')
+    end,
+  },
   { 'nvim-lualine/lualine.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -111,9 +118,6 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
-
--- Set colorscheme
-vim.cmd('colorscheme lunaperche')
 
 -- Configure lualine
 require('lualine').setup {
