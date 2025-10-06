@@ -44,7 +44,11 @@ require("lazy").setup({
   { "hedyhli/outline.nvim",
     lazy = true,
     keys = { { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" } },
-    opts = {}
+    opts = {
+      outline_window = {
+        split_command = 'topleft',
+      },
+    }
   },
 
   -- Syntax and Highlighting
