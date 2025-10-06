@@ -41,6 +41,11 @@ require("lazy").setup({
     }
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "hedyhli/outline.nvim",
+    lazy = true,
+    keys = { { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" } },
+    opts = {}
+  },
 
   -- Syntax and Highlighting
   {
