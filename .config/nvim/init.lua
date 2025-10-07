@@ -120,6 +120,9 @@ vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
 
+-- Set colorscheme
+vim.cmd.colorscheme "lunaperche"
+
 -- Configure lualine
 require('lualine').setup {
   options = {
