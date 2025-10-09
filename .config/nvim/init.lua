@@ -41,6 +41,15 @@ require("lazy").setup({
     }
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "hedyhli/outline.nvim",
+    lazy = true,
+    keys = { { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" } },
+    opts = {
+      outline_window = {
+        split_command = 'topleft',
+      },
+    }
+  },
 
   -- Syntax and Highlighting
   {
@@ -110,6 +119,9 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
+
+-- Set colorscheme
+vim.cmd.colorscheme "lunaperche"
 
 -- Configure lualine
 require('lualine').setup {
@@ -228,6 +240,13 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.shiftwidth = 2
     vim.opt_local.softtabstop = 2
   end,
+})
+
+-- Open outline on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  command = "Outline",
+  nested = true,
 })
 
 
