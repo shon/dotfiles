@@ -242,5 +242,12 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- Open outline on startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  pattern = "*",
+  command = "Outline",
+  nested = true,
+})
+
 
 print("Neovim config loaded!")
