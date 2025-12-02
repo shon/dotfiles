@@ -133,6 +133,9 @@ require('lualine').setup {
 }
 
 -- [[ ---------------- Key Mappings ---------------- ]]
+-- Set leader key
+vim.g.mapleader = ','
+
 -- General keymaps
 vim.keymap.set('n', '<F2>', ':Neotree toggle<CR>', { silent = true })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
@@ -140,6 +143,14 @@ vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {})
 vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
 vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, {})
 
+
+-- Configure diagnostics
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = true,
+})
 
 -- LSP keymaps
 local on_attach = function(client, bufnr)

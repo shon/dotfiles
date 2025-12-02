@@ -8,7 +8,7 @@ This Neovim configuration is built to be a fast, modern, and powerful developmen
 
 ## Key Bindings
 
-The `<leader>` key is mapped to `space`.
+The `<leader>` key is mapped to `,` (the comma key).
 
 ### File and Code Navigation
 
@@ -16,7 +16,7 @@ The `<leader>` key is mapped to `space`.
     *   Toggle the file explorer sidebar: `<F2>`
 
 *   **Symbol Outline (`outline.nvim`)**
-    *   Toggle the code symbol outline: `<leader>o` (`<space>o`)
+    *   Toggle the code symbol outline: `<leader>o` (`,o`)
     *   This sidebar lists all the symbols (functions, classes, variables, etc.) in the current file, allowing for quick navigation.
 
 *   **Fuzzy Finding (`telescope.nvim`)**
