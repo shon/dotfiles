@@ -134,7 +134,7 @@ require('lualine').setup {
 
 -- [[ ---------------- Key Mappings ---------------- ]]
 -- Set leader key
-vim.g.mapleader = ','
+-- vim.g.mapleader = ','
 
 -- General keymaps
 vim.keymap.set('n', '<F2>', ':Neotree toggle<CR>', { silent = true })
