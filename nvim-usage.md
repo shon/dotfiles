@@ -16,7 +16,7 @@ The `<leader>` key is mapped to `/` (default).
     *   Toggle the file explorer sidebar: `<F2>`
 
 *   **Symbol Outline (`outline.nvim`)**
-    *   Toggle the code symbol outline: `<leader>o` (`,o`)
+    *   Toggle the code symbol outline: `<leader>o`
     *   This sidebar lists all the symbols (functions, classes, variables, etc.) in the current file, allowing for quick navigation.
 
 *   **Fuzzy Finding (`telescope.nvim`)**
