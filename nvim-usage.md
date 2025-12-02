@@ -8,7 +8,7 @@ This Neovim configuration is built to be a fast, modern, and powerful developmen
 
 ## Key Bindings
 
-The `<leader>` key is mapped to `,` (the comma key).
+The `<leader>` key is mapped to `/` (default).
 
 ### File and Code Navigation
 
