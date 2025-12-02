@@ -42,13 +42,16 @@ require("lazy").setup({
   },
   { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   { "hedyhli/outline.nvim",
-    lazy = true,
+    event = "VimEnter",
     keys = { { "<leader>o", "<cmd>Outline<CR>", desc = "Toggle Outline" } },
-    opts = {
-      outline_window = {
-        split_command = 'topleft',
-      },
-    }
+    config = function()
+        require("outline").setup({
+            outline_window = {
+                split_command = 'topleft',
+            },
+        })
+        vim.cmd("Outline")
+    end
   },
 
   -- Syntax and Highlighting
@@ -254,11 +257,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- Open outline on startup
-vim.api.nvim_create_autocmd("VimEnter", {
-  pattern = "*",
-  command = "Outline",
-  nested = true,
-})
+-- Open outline on startup (handled by plugin config)
 
 
 print("Neovim config loaded!")
