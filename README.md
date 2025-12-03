@@ -1,43 +1,44 @@
 # Dotfiles
 
-Configuration to setup my dev env
+Configuration to setup my dev env (mostly Neovim and bash).
 
-Mostly Neovim and bash
+I am an open-source enthusiast and Python developer who primarily uses Linux for both personal and professional work. 
+If your workflow aligns with this profile, you might find this repo useful. To learn more about me, visit [my website](https://shon.github.io).
 
 This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon hardware and Ubuntu, but can be adapted for other Linux distributions.
 
 ## Features
 
-*   **Modern Neovim:** Configuration is fully written in Lua.
-*   **Fast Plugin Management:** Uses `lazy.nvim` for asynchronous plugin loading.
-*   **Enhanced UI:** Comes with `tokyonight` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
-*   **Powerful Python Development:**
+*   💡 **Neovim:** Configuration is fully written in Lua.
+*   ⚡️ **Fast Plugin Management:** Uses `lazy.nvim` for asynchronous plugin loading.
+*   🎨 **UI:** Comes with `lunaperche` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
+*   🐍 **Python Development:**
     *   **LSP:** Full-featured language server support via `pyright` for diagnostics, code completion, and navigation.
     *   **Formatting:** Automatic formatting on save using `ruff_format`.
     *   **Linting:** High-performance linting with `ruff`.
-*   **Excellent Markdown Support:**
+*   📝 **Markdown:**
     *   **Live Preview:** In-browser preview using `markdown-preview.nvim`.
     *   **Syntax Highlighting:** Accurate highlighting with `nvim-treesitter`.
-*   **Productivity Boosters:**
+*   🚀 **Productivity:**
     *   **Fuzzy Finding:** `telescope.nvim` for finding files, text, and more.
     *   **Git Integration:** Seamless git workflows with `vim-fugitive`.
     *   **Distraction-Free Writing:** `goyo.vim` for a clean writing interface.
 
 ## Setup Instructions
 
-1.  **Clone the repository:**
+1.  📥 **Clone the repository:**
     ```bash
     git clone https://github.com/shon/dotfiles.git
     cd dotfiles
     ```
 
-2.  **Run the setup script:**
+2.  🚀 **Run the setup script:**
     This script will install all necessary packages (Neovim, git, etc.) and create the required symlinks.
     ```bash
     sh ./init.sh
     ```
 
-3.  **Launch Neovim:**
+3.  🚀 **Launch Neovim:**
     The first time you start Neovim, `lazy.nvim` will automatically install all the plugins.
     ```bash
     nvim
