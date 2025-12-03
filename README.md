@@ -1,5 +1,7 @@
 # Dotfiles
 
+This dotfiles repository is curated by an open-source enthusiast and Python developer who primarily uses Linux for both personal and professional work. If your workflow aligns with this profile, you might find this configuration useful. To learn more about the author, visit [their website](https://shon.github.io).
+
 Configuration to setup my dev env
 
 Mostly Neovim and bash
@@ -10,7 +12,7 @@ This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon 
 
 *   💡 **Modern Neovim:** Configuration is fully written in Lua.
 *   ⚡️ **Fast Plugin Management:** Uses `lazy.nvim` for asynchronous plugin loading.
-*   🎨 **Enhanced UI:** Comes with `tokyonight` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
+*   🎨 **Enhanced UI:** Comes with `lunaperche` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
 *   🐍 **Powerful Python Development:**
     *   **LSP:** Full-featured language server support via `pyright` for diagnostics, code completion, and navigation.
     *   **Formatting:** Automatic formatting on save using `ruff_format`.
@@ -44,10 +46,6 @@ This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon 
     ```
 
 That's it! Your modern development environment is ready.
-
-## About the Author
-
-This configuration is maintained by an open-source enthusiast and Python developer who uses Linux in both personal and professional environments. To find out more about the author, check out their website: https://shon.github.io
 
 ## Further Improvements
 
