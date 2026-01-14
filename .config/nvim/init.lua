@@ -102,7 +102,12 @@ require("lazy").setup({
             python = {'ruff'}
         }
     end
-  }
+  },
+  {
+     'ethanholz/nvim-lastplace',
+     config = true
+   }
+  
 })
 
 -- [[ ---------------- Neovim Settings ---------------- ]]
@@ -121,6 +126,9 @@ vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.laststatus = 2
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 
 -- Set colorscheme
 vim.cmd.colorscheme "lunaperche"
