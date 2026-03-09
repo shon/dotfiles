@@ -20,6 +20,14 @@ fetch () {
     $cmd && git checkout $1
     echo "Switched branch to $1"
 }
+copy() {
+    if [ -f "$1" ]; then
+        cat "$1" | xsel -ib
+        echo "Contents of '$1' copied to clipboard."
+    else
+        echo "Error: File '$1' not found."
+    fi
+}
 alias wget='wget -c'
 alias wgets='wget -c --no-check-certificate'
 alias bc='python'
