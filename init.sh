@@ -15,7 +15,7 @@ echo "--> Detecting package manager and installing essential packages..."
 # Function to install packages on Fedora-based systems
 install_fedora() {
     echo "    - Fedora/RHEL-based system detected. Using dnf."
-    sudo dnf install -y neovim git ripgrep bat
+    sudo dnf install -y neovim git ripgrep bat curl
     sudo dnf groupinstall -y '@development-tools'
 }
 
@@ -24,7 +24,7 @@ install_ubuntu() {
     echo "    - Debian/Ubuntu-based system detected. Using apt-get."
     sudo apt-get update
     # The 'bat' package on Ubuntu provides the 'batcat' executable needed for the alias.
-    sudo apt-get install -y neovim git ripgrep bat build-essential
+    sudo apt-get install -y neovim git ripgrep bat build-essential curl
 }
 
 if command -v dnf &> /dev/null; then
@@ -42,7 +42,18 @@ echo ""
 
 
 # ---
-# Step 2: Create symlinks for configuration files
+# Step 2: Install starship prompt
+# ---
+echo "--> Installing Starship prompt..."
+if ! command -v starship &> /dev/null; then
+    curl -sS https://starship.rs/install.sh | sh -s -- -y
+else
+    echo "    - Starship is already installed."
+fi
+echo ""
+
+# ---
+# Step 3: Create symlinks for configuration files
 # ---
 echo "--> Creating symlinks for configuration files..."
 
@@ -54,6 +65,9 @@ echo "    - Symlinking .bash_aliases"
 ln -sf "$SCRIPT_DIR/.bash_aliases" "$HOME/.bash_aliases"
 # Ensure .bashrc sources the aliases
 grep -qF 'source ~/.bash_aliases' ~/.bashrc || echo -e "\nif [ -f ~/.bash_aliases ]; then\n    . ~/.bash_aliases\nfi" >> ~/.bashrc
+
+# Ensure starship is initialized in .bashrc
+grep -qF 'starship init bash' ~/.bashrc || echo 'eval "$(starship init bash)"' >> ~/.bashrc
 
 # Git config
 echo "    - Symlinking .gitconfig"
@@ -68,7 +82,7 @@ echo "--> Symlinks created."
 echo ""
 
 # ---
-# Step 3: Final instructions
+# Step 4: Final instructions
 # ---
 echo "--> Setup complete!"
 echo "    - Please restart your shell or run 'source ~/.bashrc' for changes to take effect."

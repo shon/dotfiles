@@ -20,7 +20,7 @@ fetch () {
     $cmd && git checkout $1
     echo "Switched branch to $1"
 }
-copy() {
+xcopy() {
     if [ -f "$1" ]; then
         cat "$1" | xsel -ib
         echo "Contents of '$1' copied to clipboard."

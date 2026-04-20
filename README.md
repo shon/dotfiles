@@ -9,20 +9,26 @@ This setup is specifically tailored for **Asahi Fedora Remix** on Apple Silicon 
 
 ## Features
 
-*   💡 **Neovim:** Configuration is fully written in Lua.
-*   ⚡️ **Fast Plugin Management:** Uses `lazy.nvim` for asynchronous plugin loading.
-*   🎨 **UI:** Comes with `lunaperche` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
-*   🐍 **Python Development:**
+### 💡 NeoVim
+*   **Configuration:** Fully written in Lua.
+*   **Fast Plugin Management:** Uses `lazy.nvim` for asynchronous plugin loading.
+*   **UI:** Comes with `lunaperche` colorscheme, `lualine.nvim` for the statusbar, and `neo-tree.nvim` as a file explorer.
+*   **Python Development:**
     *   **LSP:** Full-featured language server support via `pyright` for diagnostics, code completion, and navigation.
     *   **Formatting:** Automatic formatting on save using `ruff_format`.
     *   **Linting:** High-performance linting with `ruff`.
-*   📝 **Markdown:**
+*   **Markdown:**
     *   **Live Preview:** In-browser preview using `markdown-preview.nvim`.
     *   **Syntax Highlighting:** Accurate highlighting with `nvim-treesitter`.
-*   🚀 **Productivity:**
+*   **Productivity:**
     *   **Fuzzy Finding:** `telescope.nvim` for finding files, text, and more.
     *   **Git Integration:** Seamless git workflows with `vim-fugitive`.
     *   **Distraction-Free Writing:** `goyo.vim` for a clean writing interface.
+
+### 🐚 Shell & Environment
+*   **Starship Prompt:** Fast, customizable cross-shell prompt (https://starship.rs).
+*   **Bash Aliases:** A curated collection of `.bash_aliases` for enhanced productivity.
+*   **Git Config:** Sane default `.gitconfig` for a smoother Git workflow.
 
 ## Setup Instructions
 
