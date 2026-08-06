@@ -128,6 +128,7 @@ vim.opt.termguicolors = true
 vim.opt.laststatus = 2
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.clipboard = "unnamedplus"
 
 
 -- Set colorscheme
